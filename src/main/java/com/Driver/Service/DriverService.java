@@ -20,7 +20,6 @@ public class DriverService {
 	}
 
 	public String register(DriverModel driverModel) {
-		System.out.println(driverModel);
 		list.add(driverModel);
 		return "you have Been Sucessfully Saved to our test DB, have Good times";
 
