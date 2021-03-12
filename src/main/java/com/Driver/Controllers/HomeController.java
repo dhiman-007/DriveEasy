@@ -25,34 +25,39 @@ public class HomeController {
 
 	@PostMapping("/register")
 	public String register(@RequestBody DriverModel driverModel) {
+		logger.info("Inside register Controller");
 		return DriverService.register(driverModel);
 	}
 
 	@GetMapping("/drivers")
 	public List<DriverModel> getAllDrivers() {
+		logger.info("Inside getAllDrivers Controller");
 		return DriverService.getAllDrivers();
 
 	}
 
 	@GetMapping("driver/profile/{MobNo}")
 	public DriverModel getDriver(@PathVariable String MobNo) {
+		logger.info("Inside getDriver Controller");
 		return DriverService.getDriver(MobNo);
 
 	}
 
 	@PostMapping("driver/fillChalaan/{MobNo}")
 	public void fillChalaan(@RequestBody Chalaan chalaan, @PathVariable String MobNo) {
-		logger.info("/Post filling Chalaan");
+		logger.info("Inside fillChalaan Controller");
 		DriverService.fillChalaan(chalaan, MobNo);
 	}
 
 	@PostMapping("/driver/payChalaan/{MobNo}/{ChalaanNo}")
 	public void payChalaan(@PathVariable String MobNo, @PathVariable String ChalaanNo) {
+		logger.info("Inside payChalaan Controller");
 		DriverService.payChalaan(MobNo, ChalaanNo);
 	}
 
 	@PutMapping("/driver/updateProfile/{MobNo}")
 	public DriverModel UpdateYourDetails(@RequestBody DriverModel driverModel, @PathVariable String MobNo) {
+		logger.info("Inside updateYourProfile Controller");
 		return DriverService.updateYourDetails(driverModel, MobNo);
 	}
 

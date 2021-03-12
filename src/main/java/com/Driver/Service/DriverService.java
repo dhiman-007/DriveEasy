@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.Driver.Models.Chalaan;
@@ -11,6 +12,8 @@ import com.Driver.Models.DriverModel;
 
 @Service
 public class DriverService {
+
+	Logger logger = org.slf4j.LoggerFactory.getLogger(DriverService.class);
 
 	private static List<DriverModel> list = new ArrayList<>();
 
