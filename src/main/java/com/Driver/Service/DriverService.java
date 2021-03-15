@@ -114,6 +114,7 @@ public class DriverService {
 						if (new Date().compareTo(warningChalaanDate) > 0) {
 							double chalaanAmount = Double.parseDouble(ch.getChallanAmount());
 							double newChalaanAmount = chalaanAmount + (chalaanAmount * 0.01);
+							ch.setChallanAmount(String.valueOf(newChalaanAmount));
 							return "Since, You have Not paid your Chalaan Amount." + "\n"
 									+ "The New Amount of Chalaan is " + newChalaanAmount + "rs." + "\n"
 									+ "The due Date of your Chalaan Was " + warningChalaanDate + ".";
