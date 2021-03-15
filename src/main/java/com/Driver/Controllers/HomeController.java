@@ -61,4 +61,9 @@ public class HomeController {
 		return DriverService.updateYourDetails(driverModel, MobNo);
 	}
 
+	@GetMapping("/driver/chalaanStatus/{MobNo}/{ChalaanNo}")
+	public String isWarning(@PathVariable String MobNo, @PathVariable String ChalaanNo) throws Exception {
+		return DriverService.isWarning(MobNo, ChalaanNo);
+	}
+
 }
